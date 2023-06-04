@@ -103,6 +103,11 @@ The year 2021 had the bigger baby-boom with 11524 babies in total compared to th
 
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.
+```{r}
+vornamen_2021_without_NAs$year <- 2021
+vornamen_2022_without_NAs$year <- 2022
+```
+
 
 e)  Combine both datasets into one using `bind_rows()`.
 

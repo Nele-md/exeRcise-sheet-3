@@ -82,13 +82,24 @@ typeof(vornamen_2022$Anzahl)
 vornamen_2021$Anzahl <- as.numeric(vornamen_2021$Anzahl)
 vornamen_2022$Anzahl <- as.numeric(vornamen_2022$Anzahl)
 
+vornamen_2021_without_NAs <- na.omit(vornamen_2021)
+vornamen_2022_without_NAs <- na.omit(vornamen_2022)
 ```
 The variable "Anzahl" is a character. It is not numeric as their are multiple NAs in the dataset. 
-"as.numeric" changes the datatyp from character to numeric or rather to double, which is a typ of numeric data.
+"as.numeric" changes the datatyp from character to numeric or rather to double, which is a typ of numeric data. 
 Note: NAs introduced by coersion 
+The missing values are deleted because otherwise it is not possible to calculate with the variable "Anzahl", as required by task 3c), for example. 
 
 c)  Calculate the total number of babies born in Munich in 2022
     and 2021. Which year had the bigger baby-boom?
+```{r}
+total_number_of_babies_2021 <- sum(vornamen_2021_without_NAs$Anzahl)
+total_number_of_babies_2022 <- sum(vornamen_2022_without_NAs$Anzahl)
+
+total_number_of_babies_2021
+total_number_of_babies_2022
+```
+The year 2021 had the bigger baby-boom with 11524 babies in total compared to the 9899 babies that where born in the year after. 
 
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.

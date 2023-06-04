@@ -78,8 +78,11 @@ vornamen_2022 <- read.csv("data/open_data_portal_2022.csv")
 
 typeof(vornamen_2021$Anzahl)
 typeof(vornamen_2022$Anzahl)
+
+vornamen_2021$Anzahl <- as.numeric(vornamen_2021$Anzahl)
+vornamen_2022$Anzahl <- as.numeric(vornamen_2022$Anzahl)
 ```
-The variable "Anzahl" is a character. 
+The variable "Anzahl" is a character. It is not numeric as their are multiple NAs in the dataset. 
 
 c)  Calculate the total number of babies born in Munich in 2022
     and 2021. Which year had the bigger baby-boom?

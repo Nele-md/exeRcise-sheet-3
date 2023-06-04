@@ -75,8 +75,11 @@ b)  Load the data for both years into R. Check the type of the count
 ```{r}
 vornamen_2021 <- read.csv("data/vornamen_2021.csv")
 vornamen_2022 <- read.csv("data/open_data_portal_2022.csv")
-```
 
+typeof(vornamen_2021$Anzahl)
+typeof(vornamen_2022$Anzahl)
+```
+The variable "Anzahl" is a character. 
 
 c)  Calculate the total number of babies born in Munich in 2022
     and 2021. Which year had the bigger baby-boom?

@@ -50,6 +50,7 @@ a)  Create a new repository on GitHub in your account named
     we are able to see it for grading. Add the link to the repository
     below:
     git@github.com:Nele-md/exeRcise-sheet-3.git
+    https://github.com/Nele-md/exeRcise-sheet-3.git
 b)  Push your code to this new repository by copying and executing the
     snippet on github listed under
     `…or push an existing repository from the command line`.
@@ -125,6 +126,7 @@ vornamen_2022_without_NAs$year <- 2022
 e)  Combine both datasets into one using `bind_rows()`.
 ```{r}
 library(dplyr)
+
 combination_2021_2022 <- bind_rows(vornamen_2021_without_NAs, vornamen_2022_without_NAs)
 ```
 

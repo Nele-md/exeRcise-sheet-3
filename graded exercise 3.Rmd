@@ -73,6 +73,8 @@ b)  Load the data for both years into R. Check the type of the count
     some of the counts are inaccurate because of this. Explain your
     solution and the repercussions.
 ```{r}
+library(tidyverse)
+
 vornamen_2021 <- read.csv("data/vornamen_2021.csv")
 vornamen_2022 <- read.csv("data/open_data_portal_2022.csv")
 
@@ -86,19 +88,20 @@ vornamen_2022 <- vornamen_2022 %>%
     number = Anzahl,
     gender = Geschlecht)
 
-typeof(vornamen_2021$Anzahl)
-typeof(vornamen_2022$Anzahl)
+typeof(vornamen_2021$number)
+typeof(vornamen_2022$number)
 
-vornamen_2021$Anzahl <- as.numeric(vornamen_2021$Anzahl)
-vornamen_2022$Anzahl <- as.numeric(vornamen_2022$Anzahl)
+vornamen_2021$number <- as.numeric(vornamen_2021$number)
+vornamen_2022$number <- as.numeric(vornamen_2022$number)
 
 vornamen_2021_without_NAs <- na.omit(vornamen_2021)
 vornamen_2022_without_NAs <- na.omit(vornamen_2022)
 ```
-The variable "Anzahl" is a character. It is not numeric as their are multiple NAs in the dataset. 
+The variable "number" is a character. It is not numeric as there are are multiple rows with "4 oder weniger" as values. 
 "as.numeric" changes the datatyp from character to numeric or rather to double, which is a typ of numeric data. 
-Note: NAs introduced by coersion 
-The missing values are deleted because otherwise it is not possible to calculate with the variable "Anzahl", as required by task 3c), for example. 
+The "4 oder weniger" values are deleted because otherwise it is not possible to calculate with the variable "number", as required by task 3c). 
+
+Note: The German variable names have been changed into English to prevent the mixing of German and English names. 
 
 c)  Calculate the total number of babies born in Munich in 2022
     and 2021. Which year had the bigger baby-boom?
